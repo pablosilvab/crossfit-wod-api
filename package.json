@@ -1,0 +1,27 @@
+{
+  "name": "crossfit-wod-api",
+  "version": "1.0.0",
+  "description": "REST API Design Best Practices Handbook – How to Build a REST API with JavaScript, Node.js, and Express.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon src/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pablosilvab/crossfit-wod-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pablosilvab/crossfit-wod-api/issues"
+  },
+  "homepage": "https://github.com/pablosilvab/crossfit-wod-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.19"
+  },
+  "dependencies": {
+    "express": "^4.18.1"
+  }
+}
