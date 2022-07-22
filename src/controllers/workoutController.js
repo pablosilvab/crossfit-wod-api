@@ -114,6 +114,7 @@ const deleteOneWorkout = (req, res) => {
             .send({ status: "FAILED", data: { error: error?.message || error } });
     }
 };
+
 module.exports = {
     getAllWorkouts,
     getOneWorkout,
