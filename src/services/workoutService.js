@@ -1,18 +1,18 @@
 const Workout = require("../database/Workout");
 const Workouts = require("../database/workouts");
 
-const getAllWorkouts = (filterParams) => {
+const getAllWorkouts = async (filterParams) => {
     try {
-        const allWorkouts = Workout.getAllWorkouts(filterParams);
+        const allWorkouts = await Workouts.getAllWorkouts(filterParams);
         return allWorkouts;
     } catch (error) {
         throw error;
     }
 };
 
-const getOneWorkout = (workoutId) => {
+const getOneWorkout = async (workoutId) => {
     try {
-        const workout = Workout.getOneWorkout(workoutId);
+        const workout = await Workouts.getOneWorkout(workoutId);
         return workout;
     } catch (error) {
         throw error;
@@ -28,9 +28,9 @@ const createNewWorkout = (newWorkout) => {
     }
 };
 
-const updateOneWorkout = (workoutId, changes) => {
+const updateOneWorkout = async (workoutId, changes) => {
     try {
-        const updatedWorkout = Workout.updateOneWorkout(workoutId, changes);
+        const updatedWorkout = await Workouts.updateOneWorkout(workoutId, changes);
         return updatedWorkout;
     } catch (error) {
         throw error;
