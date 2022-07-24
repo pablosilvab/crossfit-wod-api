@@ -1,5 +1,4 @@
-const Workout = require("../database/Workout");
-const Workouts = require("../database/workouts");
+const Workouts = require("../database/Workout");
 
 const getAllWorkouts = async (filterParams) => {
     try {
@@ -39,7 +38,7 @@ const updateOneWorkout = async (workoutId, changes) => {
 
 const deleteOneWorkout = (workoutId) => {
     try {
-        Workout.deleteOneWorkout(workoutId);
+        Workouts.deleteOneWorkout(workoutId);
     } catch (error) {
         throw error;
     }
