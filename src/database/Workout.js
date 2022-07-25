@@ -25,12 +25,6 @@ mongoose.connect('mongodb://localhost:27017/crossfit');
  *           items:
  *             type: string
  *           example: ["21 thrusters", "12 rope climbs, 15 ft", "15 thrusters", "9 rope climbs, 15 ft", "9 thrusters", "6 rope climbs, 15 ft"]
- *         createdAt:
- *           type: string
- *           example: 4/20/2022, 2:21:56 PM
- *         updatedAt: 
- *           type: string
- *           example: 4/20/2022, 2:21:56 PM
  *         trainerTips:
  *           type: array
  *           items:
