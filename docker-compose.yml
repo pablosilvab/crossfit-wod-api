@@ -1,0 +1,9 @@
+version: '3.7'
+services:
+  db:
+    image: mongo:5.0.9
+    ports:
+      - target: 27017
+        published: 27017
+        protocol: tcp
+        mode: host
