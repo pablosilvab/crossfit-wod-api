@@ -28,3 +28,5 @@ app.listen(PORT, () => {
     console.log(`API running in ${process.env.NODE_ENV} environtment. Listening on port ${process.env.PORT}`);
     V1SwaggerDocs(app, PORT);
 });
+
+module.exports = app;
