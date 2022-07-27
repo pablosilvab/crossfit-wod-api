@@ -27,5 +27,3 @@ Run application with
 ```
 npm run dev
 ```
-
-Redis commander: http://127.0.0.1:8081
