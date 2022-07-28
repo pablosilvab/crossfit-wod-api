@@ -1,10 +1,21 @@
 const workoutService = require("../services/workoutService");
+const redisClient = require("../cache/redis")
 
 const getAllWorkouts = async (req, res) => {
     const { mode } = req.query;
     try {
-        const allWorkouts = await workoutService.getAllWorkouts({ mode });
-        res.send({ status: "OK", data: allWorkouts });
+        redisClient.get('workouts', async (err, reply) => {
+            if (reply)
+                return res.send({ status: "OK", data: JSON.parse(reply) });
+
+            const allWorkouts = await workoutService.getAllWorkouts({ mode });
+            await redisClient.set('workouts', JSON.stringify(allWorkouts), (err, reply) => {
+                if (err) {
+                    console.log('error')
+                }
+            });
+            res.send({ status: "OK", data: allWorkouts });
+        });
     } catch (error) {
         res
             .status(error?.status || 500)
