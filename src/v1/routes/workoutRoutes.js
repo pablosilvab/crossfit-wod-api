@@ -57,12 +57,6 @@ const router = express.Router();
  *              application/json:
  *                  schema:
  *                      $ref: '#/components/schemas/Workout'
- *     parameters:
- *       - in: query
- *         name: mode
- *         schema:
- *           type: string
- *         description: The mode of a workout
  *     responses:
  *       200:
  *         description: OK
