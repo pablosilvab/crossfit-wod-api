@@ -73,6 +73,14 @@ const getOneWorkout = async (workoutId) => {
 
 const getAllWorkouts = async (filterParams) => {
     try {
+        if (filterParams.mode) {
+            return await Workouts.find({
+                "mode": {
+                    "$regex": filterParams.mode,
+                    "$options": "i"
+                }
+            })
+        }
         return await Workouts.find({ __v: 0 });
     } catch (error) {
         throw { status: 500, message: error };

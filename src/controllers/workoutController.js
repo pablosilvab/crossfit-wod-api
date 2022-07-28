@@ -4,18 +4,8 @@ const redisClient = require("../cache/redis")
 const getAllWorkouts = async (req, res) => {
     const { mode } = req.query;
     try {
-        redisClient.get('workouts', async (err, reply) => {
-            if (reply)
-                return res.send({ status: "OK", data: JSON.parse(reply) });
-
-            const allWorkouts = await workoutService.getAllWorkouts({ mode });
-            await redisClient.set('workouts', JSON.stringify(allWorkouts), (err, reply) => {
-                if (err) {
-                    console.log('error')
-                }
-            });
-            res.send({ status: "OK", data: allWorkouts });
-        });
+        const allWorkouts = await workoutService.getAllWorkouts({ mode });
+        res.send({ status: "OK", data: allWorkouts });
     } catch (error) {
         res
             .status(error?.status || 500)
@@ -34,8 +24,16 @@ const getOneWorkout = async (req, res) => {
             });
     }
     try {
-        const workout = await workoutService.getOneWorkout(workoutId);
-        res.send({ status: "OK", data: workout });
+        redisClient.get(`workout${workoutId}`, async (err, reply) => {
+            if (reply)
+                return res.send({ status: "OK", data: JSON.parse(reply) });
+            const workout = await workoutService.getOneWorkout(workoutId);
+            await redisClient.set(`workout${workoutId}`, JSON.stringify(workout), (err, reply) => {
+                if (err)
+                    console.log('error')
+            });
+            res.send({ status: "OK", data: workout });
+        });
     } catch (error) {
         res
             .status(error?.status || 500)
