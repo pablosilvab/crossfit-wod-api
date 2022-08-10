@@ -24,7 +24,7 @@ app.use("/api/v1/workouts", v1WorkoutRouter);
 app.use("/api/v1/members", v1MemberRouter);
 
 app.listen(PORT, () => {
-    console.log(`API running in ${process.env.NODE_ENV} environtment. Listening on port ${PORT}`);
+    console.log(`API running in ${process.env.NODE_ENV} environment. Listening on port ${PORT}`);
     V1SwaggerDocs(app, PORT);
 });
 
