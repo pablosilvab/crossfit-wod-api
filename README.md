@@ -17,6 +17,7 @@ Based in: https://www.freecodecamp.org/news/rest-api-design-best-practices-build
 ## Tools
 
 [![Node][node.js]][node-url]
+[![Express][express.js]][express-url]
 [![MongoDB][mongodb]][mongodb-url]
 [![Heroku][heroku]][heroku-url]
 [![Redis][redis]][redis-url]
@@ -69,6 +70,8 @@ npm run dev
 
 [node.js]: https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white
 [node-url]: https://nodejs.org/es/
+[express.js]: https://img.shields.io/badge/Express.js-404D59?style=for-the-badge
+[express-url]: http://expressjs.com/
 [mongodb]: https://img.shields.io/badge/MongoDB-4EA94B?style=for-the-badge&logo=mongodb&logoColor=white
 [mongodb-url]: https://www.mongodb.com/
 [heroku]: https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white
