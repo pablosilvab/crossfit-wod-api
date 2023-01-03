@@ -43,6 +43,8 @@ Run MongoDB and Redis locally
 docker-compose up -d
 ```
 
+Redis Commander run in http://localhost:8081/
+
 ## Executing
 
 Run application with
